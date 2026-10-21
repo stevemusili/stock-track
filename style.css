@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background: #d3d3d3;
+}
+
+.main-content {
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 210px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #051232;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav h1 {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.sidenav p {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.sidenav a{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.sidenav a:hover {
+    color: orange;
+}
+
+.main-content {
+    margin-left: 210px;
+    padding: 40px;
+}
+
+.dashboard-header h2 {
+    color: #051232;
+    font-size: 25px;
+}
+
+.dashboard-header p {
+    font-size: 16px;
+}
+
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-card {
+    background-color: white;
+    max-width: 300px;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border: 1px solid #051232;
+}
+
+.dashboard-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dashboard-card p {
+    font-size: 14px;
+}
+
+.recent-products {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 25px;
+    margin-top: 30px;
+    color: #051232;
+}
+
+.recent-products-table {
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.recent-products-table thead {
+    background-color: white;
+}
+
+.recent-products-table thead th {
+    padding: 10px 12px;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 3px solid;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products-header h2 {
+    color: #051232;
+    font-size: 25px;
+}
+
+.products-header .btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: green;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.products-header .btn:hover {
+    background-color: rgb(5, 192, 5);
+}
+
+.products-header .btn a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.search input {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+}
+
+#category {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    outline: none;
+}
+
+#status {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    outline: none;
+}
+
+.products {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.products-table {
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.products-table thead th {
+    padding: 10px 12px;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 2px solid;
+}
+
+.add-product {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #051232;
+}
+
+.add-product h2 {
+    color: #051232;
+    font-size: 25px;
+}
+
+.add-product p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.add-product-form {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-label label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-label input,
+.form-label select,
+.form-label textarea {
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #051232;
+    outline: none;
+}
+
+.form-btn {
+    margin-top: 30px;
+}
+
+.form-btn button {
+    padding: 10px;
+    border: none;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-btn button:hover {
+    background-color: rgb(5, 192, 5);
+}
+
+.edit-product {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #051232;
+    margin-top: 40px;
+}
+
+.edit-product h2 {
+    color: #051232;
+    font-size: 25px;
+}
+
+.edit-product p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.edit-product-form {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+    padding: 20px;
+} 
+
+.btn-delete {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: red;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid red;
+}
+
+.btn-submit {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #051232;
+}
+
+.btn-submit:hover {
+    background-color: rgb(5, 192, 5);
+}
