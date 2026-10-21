@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StockTrack</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="sidenav">
@@ -77,7 +79,7 @@
                 <h2>Products</h2>
                 <p>View and manage products in your inventory.</p>
             </div>
-                <button class="btn"><a href="#">Add Product</a></button>
+            <button class="btn"><a href="#">Add Product</a></button>
         </section>
 
         <section class="search-filter">
@@ -123,6 +125,58 @@
 
                 </tbody>
             </table>
+        </section>
+
+        <section class="add-product">
+            <h2>Add New Product</h2>
+            <p>Fill in the details below to add a new product.</p>
+
+            <form class="add-product-form">
+                <div class="form-label">
+                    <label for="name">Product Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. Laptop" required>
+                </div>
+            
+                <div class="form-label">
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        <option value="">Select category</option>
+                        <option value="">Electronics</option>
+                        <option value="">Furniture</option>
+                        <option value="">Stationery</option>
+                        <option value="">Cleaning</option>
+                    </select>
+                </div>
+            
+                <div class="form-label">
+                    <label class="form-label" for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="0" placeholder="e.g. 10" required>
+                </div>
+            
+                <div class="form-label">
+                    <label for="price">Price(KES)</label>
+                    <input type="number" id="price" name="price" min="0" placeholder="e.g. 4,500" required>
+                </div>
+            
+                <div class="form-label">
+                    <label for="supplier">Supplier</label>
+                    <input type="text" id="supplier" name="supplier" placeholder="e.g. MaxTech Agencies" required>
+                </div>
+            
+                <div class="form-label">
+                    <label for="minimumStock"> Minimum Stock level</label>
+                    <input type="number" id="minimumStock" name="minimumStock" min="0" placeholder="e.g. 4" required>
+                </div>
+            
+                <div class="form-label">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" rows="5" placeholder="Product description(optional)"></textarea>
+                </div>
+
+                <div class="form-btn">
+                    <button type="submit">Add Product</button>
+                </div>
+            </form>
         </section>
 
     </main>
