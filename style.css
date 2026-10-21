@@ -11,6 +11,14 @@ body {
     background: white;
 }
 
+.main-content {
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+
 .sidenav {
     height: 100%;
     width: 210px;
@@ -89,6 +97,11 @@ body {
     font-size: 14px;
 }
 
+.recent-products {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 .section-header h2 {
     font-size: 25px;
     margin-top: 30px;
@@ -112,4 +125,35 @@ body {
     font-weight: 600;
     font-size: 18px;
     border-bottom: 3px solid;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products-header h2 {
+    color: #051232;
+    font-size: 25px;
+}
+
+.products-header .btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: green;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.products-header .btn:hover {
+    background-color: rgb(5, 192, 5);
+}
+
+.products-header .btn a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
 }
