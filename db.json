@@ -1,0 +1,31 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Laptop",
+            "category": "Electronics",
+            "quantity": 20,
+            "price": 60000,
+            "supplier": "MaxTech Agencies",
+            "minimumStock": 5
+        },
+        {
+            "id": "2",
+            "name": "Office Chair",
+            "category": "Furniture",
+            "quantity": 3,
+            "price": 10000,
+            "supplier": "Cozy Comfort",
+            "minimumStock": 5
+        },
+        {
+            "id": "3",
+            "name": "Printing Paper",
+            "category": "Stationery",
+            "quantity": 0,
+            "price": 700,
+            "supplier": "Paper & Pen Ltd",
+            "minimumStock": 5
+        }
+    ]
+}
