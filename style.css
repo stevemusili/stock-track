@@ -88,3 +88,28 @@ body {
 .dashboard-card p {
     font-size: 14px;
 }
+
+.section-header h2 {
+    font-size: 25px;
+    margin-top: 30px;
+    color: #051232;
+}
+
+.recent-products-table {
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.recent-products-table thead {
+    background-color: #d3d3d3;
+}
+
+.recent-products-table thead th {
+    padding: 10px 12px;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 3px solid;
+}
