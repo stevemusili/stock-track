@@ -7,7 +7,8 @@
             "quantity": 20,
             "price": 60000,
             "supplier": "MaxTech Agencies",
-            "minimumStock": 5
+            "minimumStock": 5,
+            "description": "A Elitebook laptop for office use"
         },
         {
             "id": "2",
@@ -16,7 +17,8 @@
             "quantity": 3,
             "price": 10000,
             "supplier": "Cozy Comfort",
-            "minimumStock": 5
+            "minimumStock": 5,
+            "description": "Executive office chair"
         },
         {
             "id": "3",
@@ -25,7 +27,8 @@
             "quantity": 0,
             "price": 700,
             "supplier": "Paper & Pen Ltd",
-            "minimumStock": 5
+            "minimumStock": 5,
+            "description": "A4 printing paper"
         }
     ]
 }
