@@ -7,6 +7,10 @@
     font-family: 'Poppins';
 }
 
+body {
+    background: white;
+}
+
 .sidenav {
     height: 100%;
     width: 210px;
@@ -45,4 +49,42 @@
 
 .sidenav a:hover {
     color: orange;
+}
+
+.main-content {
+    margin-left: 210px;
+    padding: 40px;
+}
+
+.dashboard-header h2 {
+    color: #051232;
+    font-size: 25px;
+}
+
+.dashboard-header p {
+    font-size: 16px;
+}
+
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-card {
+    background-color: #d3d3d3;
+    max-width: 300px;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border: 1px solid #051232;
+}
+
+.dashboard-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dashboard-card p {
+    font-size: 14px;
 }
