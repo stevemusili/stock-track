@@ -187,6 +187,7 @@ body {
 
 .products {
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .products-table {
@@ -203,4 +204,67 @@ body {
     border-bottom: 2px solid;
 }
 
+.add-product {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #051232;
+}
 
+.add-product h2 {
+    color: #051232;
+    font-size: 25px;
+}
+
+.add-product p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.add-product-form {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-label label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-label input,
+.form-label select,
+.form-label textarea {
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #051232;
+    outline: none;
+}
+
+.form-btn {
+    margin-top: 30px;
+}
+
+.form-btn button {
+    padding: 10px;
+    border: none;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-btn button:hover {
+    background-color: rgb(5, 192, 5);
+}
