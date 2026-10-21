@@ -8,7 +8,7 @@
 }
 
 body {
-    background: white;
+    background: #d3d3d3;
 }
 
 .main-content {
@@ -81,7 +81,7 @@ body {
 }
 
 .dashboard-card {
-    background-color: #d3d3d3;
+    background-color: white;
     max-width: 300px;
     padding: 40px 20px;
     border-radius: 10px;
@@ -117,7 +117,7 @@ body {
 }
 
 .recent-products-table thead {
-    background-color: #d3d3d3;
+    background-color: white;
 }
 
 .recent-products-table thead th {
@@ -157,3 +157,31 @@ body {
     font-size: 16px;
     font-weight: 500;
 }
+
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.search input {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+}
+
+#category {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    outline: none;
+}
+
+#status {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    outline: none;
+}
+
