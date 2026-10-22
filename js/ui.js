@@ -19,7 +19,7 @@ export function renderProducts(products) {
         quantityCell.textContent = product.quantity;
 
         const priceCell = document.createElement("td");
-        priceCell.textContent = `KES ${product.price.toLocalString()}`;
+        priceCell.textContent = `KES ${product.price.toLocaleString()}`;
 
         const statusCell = document.createElement("td");
         statusCell.textContent = product.quantity === 0? "Out of Stock" : "In Stock";
@@ -34,10 +34,9 @@ export function renderProducts(products) {
         deleteBtn.className = "delete-btn";
         deleteBtn.textContent = "Delete";
 
-        actionsCell.append(editBtn);
-        actionsCell.append(deleteBtn);
+        actionsCell.append(editBtn, deleteBtn);
 
-        row.append(nameCell, categoryCell, quantityCell, priceCell, statusCell, actionsCell);
+        row.append(idCell, nameCell, categoryCell, quantityCell, priceCell, statusCell, actionsCell);
 
         productList.append(row);
     });
