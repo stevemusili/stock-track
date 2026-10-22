@@ -1,4 +1,5 @@
 import { getProducts  } from "./api";
+import { renderProducts } from "./ui";
 
 async function loadProducts() {
     const productList = document.querySelector("#product-list");
@@ -9,13 +10,13 @@ async function loadProducts() {
     tableData.className = "loading";
     tableData.textContent = "Loading products...";
 
-    tableRow.appendChild(tableData);
-    productList.appendChild(tableRow);
+    tableRow.append(tableData);
+    productList.append(tableRow);
 
     try {
         const products = await getProducts();
 
-        console.log(products);
+        renderProducts(products);
 
     } catch (error) {
       const tableRow = document.createElement("tr");
@@ -24,9 +25,9 @@ async function loadProducts() {
       tableData.className = "error";
       tableData.textContent = "${error.message}";
 
-      tableRow.appendChild(tableData);
-      productList.appendChild(tableRow);
-      
+      tableRow.append(tableData);
+      productList.append(tableRow);
+
       console.error(error);
     }  
 }
