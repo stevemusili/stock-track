@@ -1,8 +1,9 @@
-import { getProducts, addProduct } from "./api.js";
+import { getProducts, addProduct, deleteProduct } from "./api.js";
 import { renderProducts } from "./ui.js";
 
+const productList = document.querySelector("#product-list");
+
 async function loadProducts() {
-    const productList = document.querySelector("#product-list");
 
     const tableRow = document.createElement("tr");
 
@@ -59,8 +60,36 @@ productForm.addEventListener("submit", async(event) => {
 
         productForm.reset();
 
-        const products = await getProducts();
-        renderProducts(products);
+        await loadProducts();
+
+    } catch (error) {
+        alert(error.message);
+        console.error(error);
+    }
+});
+
+productList.addEventListener("click", async (event) => {
+    if (!event.target.classList.contains("delete-btn")) {
+        return;
+    }
+
+    const productId = event.target.dataset.id;
+
+    const confirmed = confirm(
+        "Areyou sure you want to delete this product?"
+    );
+
+    if (!confirmed) {
+        return;
+    }
+
+    try {
+        await deleteProduct(productId);
+
+        alert("Product deleted successfully!");
+
+        await loadProducts();
+
     } catch (error) {
         alert(error.message);
         console.error(error);
