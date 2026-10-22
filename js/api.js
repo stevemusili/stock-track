@@ -1,18 +1,36 @@
+const API_URL = "http://localhost:3000/products";
 export async function getProducts() {
-  const url = "http://localhost:3000/products";
-
   try {
-    const response = await fetch(url);
+    const response = await fetch(API_URL);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     const products = await response.json();
-
-    console.log("Sucess:", products);
     return products;
     
   } catch (error) {
-    console.error("Failed to fetch products:", error);
+    throw new Error(`Unable to load products: ${error.message}`);
+  }
+}
+
+export async function addProduct(product) {
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(product)
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add product");
+    }
+
+    return await response.json();
+
+  }catch (error) {
+    throw new Error(`Unable to add product: ${error.message}`);
   }
 }
