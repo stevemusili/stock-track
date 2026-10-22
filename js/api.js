@@ -34,3 +34,21 @@ export async function addProduct(product) {
     throw new Error(`Unable to add product: ${error.message}`);
   }
 }
+
+export async function deleteProduct(id) {
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: "DELETE"
+    });
+
+    if (!response.ok) {
+      throw new Error (`HTTP error! Status: ${response.status}`);
+    }
+
+    return true;
+
+  } catch (error) {
+    throw new Error(`Unable to delete product: ${error.message}`);
+  }
+}
+  
