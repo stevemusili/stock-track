@@ -25,7 +25,7 @@ export async function addProduct(product) {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to add product");
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     return await response.json();
