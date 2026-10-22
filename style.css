@@ -195,6 +195,7 @@ body {
     border-radius: 10px;
     border-collapse: collapse;
     overflow: hidden;
+    background-color: white;
 }
 
 .products-table thead th {
@@ -202,6 +203,11 @@ body {
     font-weight: 600;
     font-size: 18px;
     border-bottom: 2px solid;
+}
+
+.products-table tbody td{
+    padding: 10px 12px;
+    text-align: center;
 }
 
 .add-product {
@@ -223,7 +229,7 @@ body {
     margin-bottom: 20px;
 }
 
-.add-product-form {
+#product-form {
     display: grid;
     grid-template-columns: repeat(2,minmax(0, 1fr));
     gap: 20px;
