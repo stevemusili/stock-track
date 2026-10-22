@@ -3,13 +3,14 @@ import { getProducts  } from "./api";
 async function loadProducts() {
     const productList = document.querySelector("#product-list");
 
-    productList.innerHTML = `
-        <tr>
-            <td class="loading">
-                Loading products...
-            </td>
-        </tr>
-    `;
+    const tableRow = document.createElement("tr");
+
+    const tableData = document.createElement("td");
+    tableData.className = "loading";
+    tableData.textContent = "Loading products...";
+
+    tableRow.appendChild(tableData);
+    productList.appendChild(tableRow);
 
     try {
         const products = await getProducts();
@@ -17,15 +18,16 @@ async function loadProducts() {
         console.log(products);
 
     } catch (error) {
-        productList.innerHTML = `
-        <tr>
-            <td class="error">
-                ${error.message}
-            </td>
-        </tr>
-        `;
-        
-        console.error(error);
+      const tableRow = document.createElement("tr");
+
+      const tableData = document.createElement("td");
+      tableData.className = "error";
+      tableData.textContent = "${error.message}";
+
+      tableRow.appendChild(tableData);
+      productList.appendChild(tableRow);
+      
+      console.error(error);
     }  
 }
 
