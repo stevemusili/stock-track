@@ -22,16 +22,18 @@ export function renderProducts(products) {
         priceCell.textContent = `KES ${product.price.toLocaleString()}`;
 
         const statusCell = document.createElement("td");
-        statusCell.textContent = product.quantity === 0? "Out of Stock" : "In Stock";
+        statusCell.textContent = product.quantity === 0? "Out of Stock" : product.quantity <= product.minimumStock? "Low Stock" : "In Stock";
         
         const actionsCell = document.createElement("td");
 
         const editBtn = document.createElement("button");
         editBtn.className = "edit-btn";
+        editBtn.setAttribute("data-id", product.id);
         editBtn.textContent = "Edit";
 
         const deleteBtn = document.createElement("button");
         deleteBtn.className = "delete-btn";
+        deleteBtn.setAttribute("data-id", product.id);
         deleteBtn.textContent = "Delete";
 
         actionsCell.append(editBtn, deleteBtn);
