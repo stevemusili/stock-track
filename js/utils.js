@@ -53,3 +53,46 @@ export function calculateInventoryValue(products) {
         return total + Number(product.quantity) * Number(product.price);
     }, 0);
 }
+
+export function validateProduct(product) {
+    const errors = [];
+
+    if (!product.name || !product.name.trim()) {
+        errors.push("Product name is required.");
+    }
+
+    const categories = ["Electronics", "Furniture", "Stationery", "Cleaning"];
+
+    if (!categories.includes(product.category)) {
+        errors.push("Please select a valid category.");
+    }
+
+    if (product.quantity === "" || 
+        !Number.isFinite(Number(product.quantity)) || 
+        Number(product.quantity) < 0
+    ) {
+        errors.push("Quantity must be a valid non-negative number.")
+    }
+
+    if (
+        product.price === "" ||
+        !Number.isFinite(Number(product.price)) || 
+        Number(product.price) < 0
+    ) {
+        errors.push("Price must be a valid non-negative number.");
+    }
+
+    if (!product.supplier || !product.supplier.trim()) {
+        errors.push("Supplier is required.");
+    }
+
+    if (
+        product.minimumStock === "" ||
+        !Number.isFinite(Number(product.minimumStock)) ||
+        Number(product.minimumStock) < 0
+    ) {
+        errors.push("Minimum stock must be a valid non-negative number.");
+    }
+
+    return errors;
+}
