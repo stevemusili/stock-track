@@ -72,4 +72,24 @@ export async function updateProduct(id, product) {
       throw new Error(`Unable to update product: ${error.message}`);
   }
 }
-  
+
+export async function patchProduct(id, changes) {
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(changes),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    return await response.json();
+
+  } catch (error) {
+      throw new Error(`Unable to update product: ${error.message}`);
+  }
+}  
