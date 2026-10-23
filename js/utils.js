@@ -32,3 +32,18 @@ export function filterProducts(
         return matchesSearch && matchesCategory && matchesStatus;
     });
 }
+
+export function getStockStatus(product) {
+    const quantity = Number(product.quantity);
+    const minimumStock = Number(product.minimumStock);
+
+    if (quantity <= 0) {
+        return "Out of Stock";
+    }
+
+    if (quantity <= minimumStock) {
+        return "Low Stock";
+    }
+
+    return "In Stock";
+}
