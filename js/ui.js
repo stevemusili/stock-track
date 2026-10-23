@@ -60,7 +60,7 @@ export function renderDashboard(products) {
         getStockStatus(product) === "Low Stock"
     ).length;
 
-    const outOfStock = products.filter(product => 
+    const outOfStockCount = products.filter(product => 
         getStockStatus(product) === "Out of Stock"
     ).length;
 
@@ -76,3 +76,27 @@ export function renderDashboard(products) {
     renderRecentProducts(products);
 }
 
+export function renderRecentProducts(products) {
+    const recentList = document.querySelector("#recent-products-list");
+
+    if (!recentList) return;
+
+    recentList.replaceChildren();
+
+    // display up to five products from the end of the API list
+    const recentProducts = [...products].slice(-5).reverse();
+
+    recentProducts.forEach(product => {
+        const row = document.createElement("tr");
+
+        const values = [product.name, product.category, product.quantity, formatCurrency(product.price), getStockStatus(product)];
+
+        values.forEach(value => {
+            const cell = document.createElement("td");
+            cell.textContent = value;
+            row.appendChild(cell);
+        });
+
+        recentList.append(row);
+    });
+}
