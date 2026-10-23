@@ -1,3 +1,4 @@
+import { getStockStatus, formatCurrency, calculateInventoryValue } from "./utils";
 export function renderProducts(products) {
     const productList = document.querySelector("#product-list");
 
@@ -43,3 +44,35 @@ export function renderProducts(products) {
         productList.append(row);
     });
 }
+
+export function renderDashboard(products) {
+    const totalProducts = document.querySelector("#total-products");
+    const totalStock = document.querySelector("#total-stock");
+    const lowStock = document.querySelector("#low-stock");
+    const outOfStock = document.querySelector("#out-of-stock");
+    const inventoryValue = document.querySelector("#inventory-value");
+
+    const totalQuantity = products.reduce((total, product) => {
+        return total + Number(product.quantity);
+    }, 0);
+
+    const lowStockCount = products.filter(product => 
+        getStockStatus(product) === "Low Stock"
+    ).length;
+
+    const outOfStock = products.filter(product => 
+        getStockStatus(product) === "Out of Stock"
+    ).length;
+
+    totalProducts.textContent = products.length;
+    totalStock.textContent = totalQuantity;
+    lowStock.textContent = lowStockCount;
+    outOfStock.textContent = outOfStockCount;
+
+    inventoryValue.textContent = formatCurrency(
+        calculateInventoryValue(products)
+    );
+
+    renderRecentProducts(products);
+}
+
