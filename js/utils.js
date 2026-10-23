@@ -47,3 +47,9 @@ export function getStockStatus(product) {
 
     return "In Stock";
 }
+
+export function calculateInventoryValue(products) {
+    return products.reduce((total, product) => {
+        return total + Number(product.quantity) * Number(product.price);
+    }, 0);
+}
