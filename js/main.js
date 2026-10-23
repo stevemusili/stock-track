@@ -1,5 +1,6 @@
 import { getProducts, addProduct, deleteProduct, updateProduct } from "./api.js";
 import { renderProducts } from "./ui.js";
+import { filterProducts } from "./utils.js";
 
 let editingProductId = null;
 
@@ -21,6 +22,9 @@ async function loadProducts() {
         const products = await getProducts();
 
         renderProducts(products);
+
+        allProducts = await getProducts();
+        applyFilters();
 
     } catch (error) {
         productList.textContent = "";
@@ -183,3 +187,29 @@ editProductForm.addEventListener("submit", async (event) => {
         alert(error.message);
     }
 });
+
+const searchInput = document.querySelector("#search-input");
+const categoryFilter = document.querySelector("#search-category");
+const statusFilter = document.querySelector("#status");
+
+let allProducts = [];
+
+function applyFilters() {
+    const searchTerm = searchInput.value;
+    const category = categoryFilter.value;
+    const status = statusFilter.value;
+
+    const filteredProducts = filterProducts(
+        allProducts,
+        searchTerm,
+        category,
+        status
+    );
+
+    renderProducts(filteredProducts);
+}
+
+// listen for changes in each filter
+searchInput.addEventListener("input", applyFilters);
+categoryFilter.addEventListener("change", applyFilters);
+statusFilter.addEventListener("change", applyFilters);
