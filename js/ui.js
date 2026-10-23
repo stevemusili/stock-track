@@ -28,7 +28,7 @@ export function renderProducts(products) {
 
         const editBtn = document.createElement("button");
         editBtn.className = "edit-btn";
-        editBtn.setAttribute("data-id", product.id);
+        editBtn.dataset.id = product.id;
         editBtn.textContent = "Edit";
 
         const deleteBtn = document.createElement("button");

@@ -51,4 +51,25 @@ export async function deleteProduct(id) {
     throw new Error(`Unable to delete product: ${error.message}`);
   }
 }
+
+export async function updateProduct(id, product) {
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    return await response.json();
+
+  } catch (error) {
+      throw new Error(`Unable to update product: ${error.message}`);
+  }
+}
   
