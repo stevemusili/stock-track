@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
+    scroll-behavior: smooth;
 }
 
 body {
@@ -89,12 +90,26 @@ body {
 }
 
 .dashboard-card h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .dashboard-card p {
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+}
+
+#total-stock {
+    color: green;
+}
+
+#low-stock {
+    color: orange;
+}
+
+#out-of-stock {
+    color: red;
 }
 
 .recent-products {
@@ -114,6 +129,7 @@ body {
     border-collapse: collapse;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-top: 20px;
 }
 
 .recent-products-table thead {
@@ -124,7 +140,12 @@ body {
     padding: 10px 12px;
     font-weight: 600;
     font-size: 18px;
-    border-bottom: 3px solid;
+    border-bottom: 2px solid;
+}
+
+.recent-products-table tbody td{
+    padding: 10px 12px;
+    text-align: center;
 }
 
 .products-header {
@@ -194,7 +215,11 @@ body {
     width: 100%;
     border-radius: 10px;
     border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+}
+
+.products-table thead {
     background-color: white;
 }
 
@@ -347,4 +372,23 @@ body {
 
 .error {
     color: red;
+}
+
+.edit-btn {
+    background-color: orange;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    color: red;
+    cursor: pointer;
 }

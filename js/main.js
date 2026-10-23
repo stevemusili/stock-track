@@ -1,5 +1,6 @@
 import { getProducts, addProduct, deleteProduct, updateProduct } from "./api.js";
-import { renderProducts } from "./ui.js";
+import { renderProducts, renderDashboard } from "./ui.js";
+import { filterProducts, formatCurrency, validateProduct, } from "./utils.js";
 
 let editingProductId = null;
 
@@ -10,7 +11,7 @@ async function loadProducts() {
     const tableRow = document.createElement("tr");
 
     const tableData = document.createElement("td");
-    tableData.colSpan = 6;
+    tableData.colSpan = 7;
     tableData.className = "loading";
     tableData.textContent = "Loading products...";
 
@@ -18,16 +19,16 @@ async function loadProducts() {
     productList.append(tableRow);
 
     try {
-        const products = await getProducts();
-
-        renderProducts(products);
+        allProducts = await getProducts();
+        renderDashboard(allProducts);
+        applyFilters();
 
     } catch (error) {
         productList.textContent = "";
         const tableRow = document.createElement("tr");
 
         const tableData = document.createElement("td");
-        tableData.colSpan = 6;
+        tableData.colSpan = 7;
         tableData.className = "error";
         tableData.textContent = `${error.message}`;
 
@@ -119,19 +120,19 @@ productList.addEventListener("click", async (event) => {
 
         editingProductId = product.id;
 
-        editProductForm.querySelector('[name ="name"]').value = product.name ?? "";
+        editProductForm.querySelector('[name="name"]').value = product.name ?? "";
 
-        editProductForm.querySelector('[name ="quantity"]').value = product.quantity ?? 0;
+        editProductForm.querySelector('[name="quantity"]').value = product.quantity ?? 0;
 
-        editProductForm.querySelector('[name ="supplier"]').value = product.supplier ?? "";
+        editProductForm.querySelector('[name="supplier"]').value = product.supplier ?? "";
 
-        editProductForm.querySelector('[name ="category"]').value = product.category ?? "";
+        editProductForm.querySelector('[name="category"]').value = product.category ?? "";
 
-        editProductForm.querySelector('[name ="price"]').value = product.price ?? 0;
+        editProductForm.querySelector('[name="price"]').value = product.price ?? 0;
 
-        editProductForm.querySelector('[name ="minimumStock"]').value = product.minimumStock ?? 0;
+        editProductForm.querySelector('[name="minimumStock"]').value = product.minimumStock ?? 0;
 
-        editProductForm.querySelector('[name ="description"]').value = product.description ?? "";
+        editProductForm.querySelector('[name="description"]').value = product.description ?? "";
 
         document.querySelector(".edit-product").scrollIntoView({
             behavior: "smooth"
@@ -183,3 +184,29 @@ editProductForm.addEventListener("submit", async (event) => {
         alert(error.message);
     }
 });
+
+const searchInput = document.querySelector("#search-input");
+const categoryFilter = document.querySelector("#search-category");
+const statusFilter = document.querySelector("#status");
+
+let allProducts = [];
+
+function applyFilters() {
+    const searchTerm = searchInput.value;
+    const category = categoryFilter.value;
+    const status = statusFilter.value;
+
+    const filteredProducts = filterProducts(
+        allProducts,
+        searchTerm,
+        category,
+        status
+    );
+
+    renderProducts(filteredProducts);
+}
+
+// listen for changes in each filter
+searchInput.addEventListener("input", applyFilters);
+categoryFilter.addEventListener("change", applyFilters);
+statusFilter.addEventListener("change", applyFilters);

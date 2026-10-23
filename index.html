@@ -12,14 +12,14 @@
     <div class="sidenav">
         <h1>StockTrack</h1>
         <p>Inventory Management System</p>
-        <a href="#">Dashboard</a>
-        <a href="#">Products</a>
-        <a href="#">Add Product</a>
-        <a href="#">Edit Product</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#products">Products</a>
+        <a href="#add-product">Add Product</a>
+        <a href="#edit-product">Edit Product</a>
     </div>
 
     <main class="main-content">
-        <section class="dashboard-header">
+        <section class="dashboard-header" id="dashboard">
             <h2>Welcome to StockTrack</h2>
             <p>Manage your inventory efficiently and keep track of stock levels.</p>
         </section>
@@ -73,17 +73,17 @@
             </table>
         </section>
 
-        <section class="products-header">
+        <section class="products-header" id="products">
             <div>
                 <h2>Products</h2>
                 <p>View and manage products in your inventory.</p>
             </div>
-            <button class="btn"><a href="#">Add Product</a></button>
+            <button class="btn"><a href="#add-product">Add Product</a></button>
         </section>
 
         <section class="search-filter">
             <div class="search" id="search">
-                <input type="search" name="search" placeholder="Search by name">
+                <input type="search" id="search-input" name="search" placeholder="Search by name">
             </div>
 
             <div class="category">
@@ -126,7 +126,7 @@
             </table>
         </section>
 
-        <section class="add-product">
+        <section class="add-product" id="add-product">
             <h2>Add New Product</h2>
             <p>Fill in the details below to add a new product.</p>
 
@@ -179,7 +179,7 @@
             </form>
         </section>
 
-        <section class="edit-product">
+        <section class="edit-product" id="edit-product">
             <h2>Edit Product</h2>
             <p>Update product information below</p>
 
