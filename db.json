@@ -39,6 +39,36 @@
       "minimumStock": 5,
       "description": "",
       "id": "xht0RPqp6kY"
+    },
+    {
+      "name": "Wireless Keyboard",
+      "category": "Electronics",
+      "quantity": 15,
+      "price": 1500,
+      "supplier": "Erika Tech",
+      "minimumStock": 5,
+      "description": "",
+      "id": "HGJ-MN8HyHM"
+    },
+    {
+      "name": "Mouse",
+      "category": "Electronics",
+      "quantity": 5,
+      "price": 1000,
+      "supplier": "SpaceTex Technologies",
+      "minimumStock": 5,
+      "description": "",
+      "id": "ttL-EZBBI0w"
+    },
+    {
+      "name": "Office Table",
+      "quantity": 7,
+      "supplier": "Oasis Furniture",
+      "category": "Furniture",
+      "price": 5000,
+      "minimumStock": 5,
+      "description": "",
+      "id": "iWt8P_QZjRM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
