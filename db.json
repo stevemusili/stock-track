@@ -1,34 +1,45 @@
 {
-    "products": [
-        {
-            "id": "1",
-            "name": "Laptop",
-            "category": "Electronics",
-            "quantity": 20,
-            "price": 60000,
-            "supplier": "MaxTech Agencies",
-            "minimumStock": 5,
-            "description": "A Elitebook laptop for office use"
-        },
-        {
-            "id": "2",
-            "name": "Office Chair",
-            "category": "Furniture",
-            "quantity": 3,
-            "price": 10000,
-            "supplier": "Cozy Comfort",
-            "minimumStock": 5,
-            "description": "Executive office chair"
-        },
-        {
-            "id": "3",
-            "name": "Printing Paper",
-            "category": "Stationery",
-            "quantity": 0,
-            "price": 700,
-            "supplier": "Paper & Pen Ltd",
-            "minimumStock": 5,
-            "description": "A4 printing paper"
-        }
-    ]
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "category": "Electronics",
+      "quantity": 20,
+      "price": 60000,
+      "supplier": "MaxTech Agencies",
+      "minimumStock": 5,
+      "description": "A Elitebook laptop for office use"
+    },
+    {
+      "id": "2",
+      "name": "Office Chair",
+      "category": "Furniture",
+      "quantity": 3,
+      "price": 10000,
+      "supplier": "Cozy Comfort",
+      "minimumStock": 5,
+      "description": "Executive office chair"
+    },
+    {
+      "id": "3",
+      "name": "Printing Paper",
+      "category": "Stationery",
+      "quantity": 0,
+      "price": 700,
+      "supplier": "Paper & Pen Ltd",
+      "minimumStock": 5,
+      "description": "A4 printing paper"
+    },
+    {
+      "name": "Foam Cleaner",
+      "quantity": 50,
+      "supplier": "MurClean Services",
+      "category": "Cleaning",
+      "price": 450,
+      "minimumStock": 5,
+      "description": "",
+      "id": "xht0RPqp6kY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
