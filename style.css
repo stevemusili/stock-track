@@ -171,7 +171,7 @@ body {
     outline: none;
 }
 
-#category {
+#search-category {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid white;
@@ -306,7 +306,7 @@ body {
     justify-content: space-between;
     gap: 15px;
     margin-top: 10px;
-    padding: 20px;
+    padding: 50px;
 } 
 
 .btn-delete {
