@@ -1,4 +1,4 @@
-import { getStockStatus, formatCurrency, calculateInventoryValue } from "./utils";
+import { getStockStatus, formatCurrency, calculateInventoryValue } from "./utils.js";
 export function renderProducts(products) {
     const productList = document.querySelector("#product-list");
 
@@ -89,7 +89,13 @@ export function renderRecentProducts(products) {
     recentProducts.forEach(product => {
         const row = document.createElement("tr");
 
-        const values = [product.name, product.category, product.quantity, formatCurrency(product.price), getStockStatus(product)];
+        const values = [
+            product.name, 
+            product.category, 
+            product.quantity, 
+            formatCurrency(product.price), 
+            getStockStatus(product)
+        ];
 
         values.forEach(value => {
             const cell = document.createElement("td");
