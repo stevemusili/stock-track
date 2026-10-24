@@ -105,3 +105,19 @@ describe("filterProducts - search", () => {
         expect(result[0].name).toBe("Laptop");
     });
 });
+
+// Test the category filter
+describe("filterProducts - category", () => {
+
+    it("filters products by category", () => {
+        const result = filterProducts(
+            products,
+            "",
+            "Stationery",
+            "All"
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe("Printing Paper");
+    });
+});
