@@ -164,3 +164,87 @@ describe("filterProducts - status", () => {
         expect(result[0].name).toBe("Printing Paper");
     });
 });
+
+// Test product validation
+describe("validateProduct", () => {
+
+    // Test a valid product
+    it("returns no errors for a valid product", () => {
+        const product = {
+            name: "Foam Cleaner",
+            quantity: 50,
+            supplier: "MurClean Services",
+            category: "Cleaning",
+            price: 450,
+            minimumStock: 5
+        };
+
+        expect(validateProduct(product)).toEqual([]);
+    });
+
+    // Test a missing product name
+    it("rejects a product without a name", () => {
+        const product = {
+            name: "",
+            category: "Furniture",
+            quantity: 7,
+            supplier: "Oasis Furniture",
+            price: 5000,
+            minimumStock: 5
+        };
+
+        const errors = validateProduct(product);
+
+        expect(errors).toContain("Product name is required.");
+    });
+
+    // Test an invalid category
+    it("rejects an invalid category", () => {
+        const product = {
+            name: "Wireless Keyboard",
+            category: "Food",
+            quantity: 15,
+            supplier: "Erika Tech",
+            price: 1500,
+            minimumStock: 5
+        };
+
+        const errors = validateProduct(product);
+
+        expect(errors).toContain("Please select a valid category.");
+    });
+
+    // Test negative quantity
+    it("rejects a negative quantity", () => {
+        const product = {
+            name: "Mouse",
+            category: "Electronics",
+            quantity: -5,
+            price: 1000,
+            supplier: "SpaceTex Technologies",
+            minimumStock: 5,
+        };
+
+        const errors = validateProduct(product);
+
+        expect(errors).toContain(
+            "Quantity must be a valid non-negative number."
+        );
+    });
+
+    // Test missing supplier
+    it("rejects a product without a supplier", () => {
+        const product = {
+            "name": "Laptop",
+            "category": "Electronics",
+            "quantity": 20,
+            "price": 60000,
+            "supplier": "",
+            "minimumStock": 5,
+        };
+
+        const errors = validateProduct(product);
+
+        expect(errors).toContain("Supplier is required.");
+    });
+});
