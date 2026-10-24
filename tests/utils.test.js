@@ -121,3 +121,46 @@ describe("filterProducts - category", () => {
         expect(result[0].name).toBe("Printing Paper");
     });
 });
+
+// Test the status filter
+describe("filterProducts - status", () => {
+
+    // Test to filter in stock products
+    it("filters in stock products", () => {
+        const result = filterProducts(
+            products,
+            "",
+            "All",
+            "In Stock"
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe("Laptop");
+    });
+
+    // Test to filter low stock products
+    it("filters low stock products", () => {
+        const result = filterProducts(
+            products,
+            "",
+            "All",
+            "Low Stock"
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe("Office Chair");
+    });
+
+    // Test to filter out of stock products
+    it("filters outof stock products", () => {
+        const result = filterProducts(
+            products,
+            "",
+            "All",
+            "Out of Stock"
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe("Printing Paper");
+    });
+});
