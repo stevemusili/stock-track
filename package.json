@@ -1,0 +1,32 @@
+{
+  "name": "stock-track",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "npx serve",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevemusili/stock-track.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevemusili/stock-track/issues"
+  },
+  "homepage": "https://github.com/stevemusili/stock-track#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
