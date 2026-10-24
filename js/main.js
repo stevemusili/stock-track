@@ -1,4 +1,4 @@
-import { getProducts, addProduct, deleteProduct, updateProduct } from "./api.js";
+import { getProducts, addProduct, deleteProduct, updateProduct, patchProduct } from "./api.js";
 import { renderProducts, renderDashboard } from "./ui.js";
 import { filterProducts, formatCurrency, validateProduct, } from "./utils.js";
 
