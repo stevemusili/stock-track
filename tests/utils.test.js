@@ -37,3 +37,27 @@ describe("getStockStatus", () => {
         expect(getStockStatus(product)).toBe("Out of Stock");
     });
 });
+
+describe("calculatesInventoryValue", () => {
+
+    it("calculates total inventory value", () => {
+        const products = [
+            {
+                name: "Laptop",
+                quantity: 20,
+                price: 60000
+            },
+            {
+                name: "Office Chair",
+                quantity: 5,
+                price: 10000
+            }
+        ];
+
+        expect(calculateInventoryValue(products)).toBe(550000);
+    });
+
+    it("returns zero for an empty product list", () => {
+        expect(calculateInventoryValue([])).toBe(0);
+    });
+});
