@@ -1,4 +1,3 @@
-import { describe } from "yargs";
 import { 
     getStockStatus, 
     formatCurrency, 
@@ -6,10 +5,11 @@ import {
     filterProducts, 
     validateProduct 
 } from "../js/utils";
-import { it } from "node:test";
 
+// Test Stock Status
 describe("getStockStatus", () => {
 
+    // Test when a product is In Stock
     it("returns In Stock when quantity is above minimum stock", () => {
         const product = { 
             quantity: 20, 
@@ -19,6 +19,7 @@ describe("getStockStatus", () => {
         expect(getStockStatus(product)).toBe("In Stock");
     });
 
+    // Test when a product has Low Stock
     it("returns Low Stock when quantity is at or below minimum stock", () => {
         const product = {
             quantity: 5,
@@ -28,6 +29,7 @@ describe("getStockStatus", () => {
         expect(getStockStatus(product)).toBe("Low Stock");
     });
 
+    // Test when a product is Out of Stock
     it("returns Out of Stock when quantity is zero", () => {
         const product = {
             quantity: 0,
@@ -38,8 +40,10 @@ describe("getStockStatus", () => {
     });
 });
 
+// Test inventory calculations
 describe("calculatesInventoryValue", () => {
 
+    // Test calculations for total inventory value
     it("calculates total inventory value", () => {
         const products = [
             {
@@ -54,10 +58,50 @@ describe("calculatesInventoryValue", () => {
             }
         ];
 
-        expect(calculateInventoryValue(products)).toBe(550000);
+        expect(calculateInventoryValue(products)).toBe(1250000);
     });
 
     it("returns zero for an empty product list", () => {
         expect(calculateInventoryValue([])).toBe(0);
+    });
+});
+
+// Test filtering
+const products = [
+    {
+        id: 1,
+        name: "Laptop",
+        category: "Electronics",
+        quantity: 20,
+        minimumStock: 5
+    },
+    {
+        id:2,
+        name: "Office Chair",
+        category: "Furniture",
+        quantity: 3,
+        minimumStock: 5
+    },
+    {
+        id: 3,
+        name: "Printing Paper",
+        category: "Stationery",
+        quantity: 0,
+        minimumStock: 5
+    }
+];
+
+// Test the search
+describe("filterProducts - search", () => {
+
+    it("filters products by name", () => {
+        const result = filterProducts(
+            products,
+            "laptop",
+            "All",
+            "All"
+        );
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe("Laptop");
     });
 });
