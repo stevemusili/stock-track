@@ -52,10 +52,10 @@
     },
     {
       "name": "Mouse",
-      "category": "Electronics",
-      "quantity": 5,
-      "price": 1000,
+      "quantity": 15,
       "supplier": "SpaceTex Technologies",
+      "category": "Electronics",
+      "price": 1000,
       "minimumStock": 5,
       "description": "",
       "id": "ttL-EZBBI0w"
@@ -79,6 +79,16 @@
       "minimumStock": 5,
       "description": "",
       "id": "Y9-pLmT7FvE"
+    },
+    {
+      "name": "Mouse",
+      "category": "Electronics",
+      "quantity": 5,
+      "price": 800,
+      "supplier": "Techman Ltd",
+      "minimumStock": 5,
+      "description": "",
+      "id": "xmgGQvNlvCc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
