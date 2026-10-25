@@ -27,6 +27,8 @@ https://github.com/stevemusili/stock-track.git
 
 Live Application
 
+https://stevemusili.github.io/stock-track/
+
 
 ## Features
 Dashboard
@@ -91,10 +93,13 @@ stock-track/
 │   ├── main.js
 │   ├── ui.js
 │   └── utils.js
+├── public/
+│   └── .gitkeep
 ├── tests/
 │   └── utils.test.js
 ├── db.json
 ├── index.html
+├── LICENSE
 ├── package-lock.json
 ├── package.json
 ├── README.md
@@ -121,27 +126,7 @@ cd stock-track
 npm install
 ```
 
-4. Start JSON Server
-
-Run:
-
-```
-npx json-server --watch db.json
-```
-API will normally be available at:
-
-```
-http://localhost:3000
-```
-
-Endpoints:
-
-```
-http://localhost:3000/products
-```
-
-5. 
-Run the application
+4. Run the application
 ```
 npm start
 ```
@@ -153,6 +138,11 @@ npm test
 ```
 
 ## Deployment Link
+GitHub Pages - https://stevemusili.github.io/stock-track/
+
+Backend API URL - https://stock-track-dvic.onrender.com/products
 
 ## License
+Copyright (C) 2026 Steve Musili
 
+This project is licensed under the [MIT License](LICENSE).
