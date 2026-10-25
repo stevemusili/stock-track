@@ -1,4 +1,6 @@
 const API_URL = "http://localhost:3000/products";
+
+// GET
 export async function getProducts() {
   try {
     const response = await fetch(API_URL);
@@ -14,6 +16,7 @@ export async function getProducts() {
   }
 }
 
+// POST
 export async function addProduct(product) {
   try {
     const response = await fetch(API_URL, {
@@ -35,6 +38,7 @@ export async function addProduct(product) {
   }
 }
 
+// DELETE
 export async function deleteProduct(id) {
   try {
     const response = await fetch(`${API_URL}/${id}`, {
@@ -52,6 +56,7 @@ export async function deleteProduct(id) {
   }
 }
 
+// PUT
 export async function updateProduct(id, product) {
   try {
     const response = await fetch(`${API_URL}/${id}`, {
@@ -73,6 +78,7 @@ export async function updateProduct(id, product) {
   }
 }
 
+// PATCH
 export async function patchProduct(id, changes) {
   try {
     const response = await fetch(`${API_URL}/${id}`, {

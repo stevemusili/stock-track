@@ -33,6 +33,7 @@ export function filterProducts(
     });
 }
 
+// Get stock status
 export function getStockStatus(product) {
     const quantity = Number(product.quantity);
     const minimumStock = Number(product.minimumStock);
@@ -48,6 +49,7 @@ export function getStockStatus(product) {
     return "In Stock";
 }
 
+// format currency
 export function formatCurrency(amount) {
     return `KES ${Number(amount).toLocaleString("en-KE", {
         minimumFractionDigits: 0,
@@ -55,12 +57,14 @@ export function formatCurrency(amount) {
     })}`;
 }
 
+// Inventory value calculations
 export function calculateInventoryValue(products) {
     return products.reduce((total, product) => {
         return total + Number(product.quantity) * Number(product.price);
     }, 0);
 }
 
+// validate product
 export function validateProduct(product) {
     const errors = [];
 

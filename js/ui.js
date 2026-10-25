@@ -1,7 +1,10 @@
 import { getStockStatus, formatCurrency, calculateInventoryValue } from "./utils.js";
+
+// Render Products
 export function renderProducts(products) {
     const productList = document.querySelector("#product-list");
 
+    // Create elements
     productList.textContent = "";
 
     products.forEach(product => {
@@ -45,6 +48,7 @@ export function renderProducts(products) {
     });
 }
 
+// Render Dashboard
 export function renderDashboard(products) {
     const totalProducts = document.querySelector("#total-products");
     const totalStock = document.querySelector("#total-stock");
@@ -76,6 +80,7 @@ export function renderDashboard(products) {
     renderRecentProducts(products);
 }
 
+// Render Recent Products
 export function renderRecentProducts(products) {
     const recentList = document.querySelector("#recent-products-list");
 

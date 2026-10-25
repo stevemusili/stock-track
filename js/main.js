@@ -43,6 +43,7 @@ loadProducts();
 
 const productForm = document.querySelector("#product-form");
 
+// When a user submits the product form
 productForm.addEventListener("submit", async(event) => {
     event.preventDefault();
 
@@ -71,6 +72,7 @@ productForm.addEventListener("submit", async(event) => {
     }
 });
 
+// when a user clicks a delete button
 productList.addEventListener("click", async (event) => {
     if (!event.target.classList.contains("delete-btn")) {
         return;
