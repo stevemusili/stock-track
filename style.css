@@ -13,13 +13,11 @@ body {
 }
 
 .main-content {
-    align-items: center;
-    padding: 20px;
-    margin: auto;
-    max-width: 1200px;
+    margin-left: 210px;
+    padding: 40px;
 }
 
-
+/* Sidenav */
 .sidenav {
     height: 100%;
     width: 210px;
@@ -60,11 +58,7 @@ body {
     color: orange;
 }
 
-.main-content {
-    margin-left: 210px;
-    padding: 40px;
-}
-
+/* Dashboard */
 .dashboard-header h2 {
     color: #051232;
     font-size: 25px;
@@ -74,6 +68,7 @@ body {
     font-size: 16px;
 }
 
+/* Dashboard Cards */
 .dashboard-cards {
     display: flex;
     justify-content: space-between;
@@ -112,6 +107,7 @@ body {
     color: red;
 }
 
+/* Recent Products Section */
 .recent-products {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -123,6 +119,7 @@ body {
     color: #051232;
 }
 
+/* Recent Products Table */
 .recent-products-table {
     width: 100%;
     border-radius: 10px;
@@ -148,6 +145,7 @@ body {
     text-align: center;
 }
 
+/* Products Section */
 .products-header {
     display: flex;
     justify-content: space-between;
@@ -211,6 +209,7 @@ body {
     margin-bottom: 40px;
 }
 
+/* Products Table */
 .products-table {
     width: 100%;
     border-radius: 10px;
@@ -244,6 +243,7 @@ body {
     border: 1px solid #051232;
 }
 
+/* Add Product Section */
 .add-product h2 {
     color: #051232;
     font-size: 25px;
@@ -300,6 +300,7 @@ body {
     background-color: rgb(5, 192, 5);
 }
 
+/* Edit Product Section */
 .edit-product {
     max-width: 1200px;
     padding: 20px;
@@ -326,6 +327,7 @@ body {
     gap: 20px;
 }
 
+/* Form Action Buttons */
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -361,6 +363,7 @@ body {
     background-color: rgb(5, 192, 5);
 }
 
+/* Loading and error states */
 .loading, .error {
     text-align: center;
     padding: 40px;
@@ -374,6 +377,7 @@ body {
     color: red;
 }
 
+/* Actions Buttons */
 .edit-btn {
     background-color: orange;
     padding: 5px 10px;
@@ -391,4 +395,433 @@ body {
     font-weight: 500;
     color: red;
     cursor: pointer;
+}
+
+/* Responsive Design */
+
+/* Tablet - 1024px and below */
+@media (max-width: 1024px) {
+
+    .main-content {
+        margin-left: 210px;
+        padding: 25px;
+    }
+
+    /* Dashboard cards */
+    .dashboard-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .dashboard-card {
+        max-width: none;
+        padding: 25px 15px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 16px;
+    }
+
+    /* Search and filters */
+    .search-filter {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .search {
+        grid-column: 1 / -1;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    #search-category,
+    #status {
+        width: 100%;
+    }
+
+    /* Tables */
+    .recent-products,
+    .products {
+        overflow-x: auto;
+    }
+
+    .recent-products-table,
+    .products-table {
+        min-width: 750px;
+    }
+
+}
+
+/* Tablet / Small Screen - 768px and below */
+@media (max-width: 768px) {
+
+    /* Sidebar */
+    .sidenav {
+        width: 170px;
+    }
+
+    .sidenav h1 {
+        font-size: 21px;
+    }
+
+    .sidenav p {
+        font-size: 13px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .sidenav a {
+        font-size: 14px;
+        padding-top: 15px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    /* Main content */
+    .main-content {
+        margin-left: 170px;
+        padding: 20px;
+    }
+
+    /* Dashboard heading */
+    .dashboard-header h2 {
+        font-size: 22px;
+    }
+
+    .dashboard-header p {
+        font-size: 14px;
+    }
+
+    /* Dashboard cards */
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .dashboard-card {
+        padding: 25px 15px;
+    }
+
+    /* Recent products */
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .recent-products-table thead th,
+    .products-table thead th {
+        font-size: 15px;
+    }
+
+    /* Products header */
+    .products-header {
+        gap: 15px;
+    }
+
+    .products-header h2 {
+        font-size: 22px;
+    }
+
+    .products-header .btn a {
+        font-size: 14px;
+    }
+
+    /* Forms */
+    .add-product,
+    .edit-product {
+        margin: 20px 0;
+    }
+
+    #product-form,
+    .edit-product-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        padding: 30px 0;
+    }
+
+}
+
+/* Mobile - 600px and below */
+@media (max-width: 600px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Mobile Navigation */
+    .sidenav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px 10px;
+        overflow: visible;
+    }
+
+    .sidenav h1 {
+        font-size: 22px;
+    }
+
+    .sidenav p {
+        font-size: 13px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+
+    .sidenav a {
+        display: inline-block;
+        padding: 8px 10px;
+        margin: 2px;
+        font-size: 13px;
+    }
+
+    /* Main Content */
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* Dashboard Header */
+    .dashboard-header h2 {
+        font-size: 20px;
+    }
+
+    .dashboard-header p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Dashboard Cards */
+    .dashboard-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .dashboard-card {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 16px;
+    }
+
+    .dashboard-card p {
+        font-size: 15px;
+        margin-top: 8px;
+    }
+
+    /* Recent Products */
+    .recent-products {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .recent-products,
+    .products {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .recent-products-table,
+    .products-table {
+        min-width: 700px;
+    }
+
+    .recent-products-table thead th,
+    .products-table thead th {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .recent-products-table tbody td,
+    .products-table tbody td {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    /* Products Header */
+    .products-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .products-header h2 {
+        font-size: 20px;
+    }
+
+    .products-header p {
+        font-size: 13px;
+    }
+
+    .products-header .btn {
+        width: 100%;
+    }
+
+    .products-header .btn a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Search and Filters */
+    .search-filter {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .search,
+    .category,
+    .status {
+        width: 100%;
+    }
+
+    .search input,
+    #search-category,
+    #status {
+        width: 100%;
+        padding: 11px;
+    }
+
+    /* Add Product Form */
+    .add-product {
+        width: 100%;
+        max-width: none;
+        margin: 20px 0;
+        padding: 15px;
+    }
+
+    .add-product h2 {
+        font-size: 20px;
+    }
+
+    .add-product p {
+        font-size: 13px;
+    }
+
+    #product-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-label label {
+        font-size: 14px;
+    }
+
+    .form-label input,
+    .form-label select,
+    .form-label textarea {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .form-btn {
+        margin-top: 10px;
+    }
+
+    .form-btn button {
+        width: 100%;
+    }
+
+    /* Edit Product Form */
+    .edit-product {
+        width: 100%;
+        max-width: none;
+        margin: 20px 0;
+        padding: 15px;
+    }
+
+    .edit-product h2 {
+        font-size: 20px;
+    }
+
+    .edit-product p {
+        font-size: 13px;
+    }
+
+    .edit-product-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .btn-delete,
+    .btn-submit {
+        width: 100%;
+    }
+
+    /* Table Action Buttons */
+    .edit-btn,
+    .delete-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+}
+
+/* Very Small Mobile - 400px and below */
+@media (max-width: 400px) {
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .sidenav a {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 18px;
+    }
+
+    .dashboard-card {
+        padding: 18px 15px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 15px;
+    }
+
+    .dashboard-card p {
+        font-size: 14px;
+    }
+
+    .add-product,
+    .edit-product {
+        padding: 12px;
+    }
+
+    .add-product h2,
+    .edit-product h2,
+    .section-header h2,
+    .products-header h2 {
+        font-size: 18px;
+    }
+
 }
