@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/products";
+const API_URL = "https://stock-track-dvic.onrender.com/products";
 
 // GET
 export async function getProducts() {
