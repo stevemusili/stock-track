@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "npx serve",
+    "start": "json-server db.json --host 0.0.0.0 --port $PORT",
     "server": "json-server db.json",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
   },
