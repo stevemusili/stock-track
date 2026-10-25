@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- Sidenav -->
     <div class="sidenav">
         <h1>StockTrack</h1>
         <p>Inventory Management System</p>
@@ -18,12 +19,14 @@
         <a href="#edit-product">Edit Product</a>
     </div>
 
+    <!-- Main Section -->
     <main class="main-content">
         <section class="dashboard-header" id="dashboard">
             <h2>Welcome to StockTrack</h2>
             <p>Manage your inventory efficiently and keep track of stock levels.</p>
         </section>
 
+        <!-- Dashboard Cards -->
         <section class="dashboard-cards">
             <div class="dashboard-card">
                 <h3>Total Products</h3>
@@ -50,12 +53,13 @@
                 <p id="inventory-value">KES 0</p>
             </div>
         </section>
-
+        <!-- Recent Products Section -->
         <section class="recent-products">
             <div class="section-header">
                 <h2>Recent Products</h2>
             </div>
 
+            <!-- Recent Products Table -->
             <table class="recent-products-table">
                 <thead>
                     <tr>
@@ -73,14 +77,16 @@
             </table>
         </section>
 
+        <!-- Products Section -->
         <section class="products-header" id="products">
             <div>
                 <h2>Products</h2>
                 <p>View and manage products in your inventory.</p>
             </div>
-            <button class="btn"><a href="#add-product">Add Product</a></button>
+            <a href="#add-product" class="btn">Add Product</a>
         </section>
 
+        <!-- Filter Section -->
         <section class="search-filter">
             <div class="search" id="search">
                 <input type="search" id="search-input" name="search" placeholder="Search by name">
@@ -106,6 +112,7 @@
             </div>
         </section>
 
+        <!-- Products Table -->
         <section class="products">
             <table class="products-table">
                 <thead>
@@ -126,10 +133,12 @@
             </table>
         </section>
 
+        <!-- Add Product Section -->
         <section class="add-product" id="add-product">
             <h2>Add New Product</h2>
             <p>Fill in the details below to add a new product.</p>
 
+            <!-- Add Product Form -->
             <form id="product-form">
                 <div class="form-label">
                     <label for="name">Product Name</label>
@@ -179,10 +188,12 @@
             </form>
         </section>
 
+        <!-- Edit Product Section -->
         <section class="edit-product" id="edit-product">
             <h2>Edit Product</h2>
             <p>Update product information below</p>
 
+            <!-- Edit Product Form -->
             <form class="edit-product-form">
                 <div class="form-label">
                     <label for="edit-name">Product Name</label>
