@@ -69,6 +69,16 @@
       "minimumStock": 5,
       "description": "",
       "id": "iWt8P_QZjRM"
+    },
+    {
+      "name": "UPS",
+      "quantity": 20,
+      "supplier": "MaxTech Agencies",
+      "category": "Electronics",
+      "price": 5500,
+      "minimumStock": 5,
+      "description": "",
+      "id": "Y9-pLmT7FvE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
