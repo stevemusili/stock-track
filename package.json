@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "npx serve",
+    "server": "json-server db.json",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
   },
   "jest": {
@@ -28,5 +29,8 @@
   "homepage": "https://github.com/stevemusili/stock-track#readme",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.15"
   }
 }
