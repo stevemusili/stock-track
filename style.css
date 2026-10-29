@@ -81,7 +81,7 @@ body {
     max-width: 300px;
     padding: 40px 20px;
     border-radius: 10px;
-    border: 1px solid #051232;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-card h3 {
@@ -232,16 +232,16 @@ body {
     text-align: center;
 }
 
+/* Add Product Section */
 .add-product {
     max-width: 1200px;
     padding: 20px;
     margin: 20px;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid #051232;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Add Product Section */
 .add-product h2 {
     color: #051232;
     font-size: 25px;
@@ -275,7 +275,7 @@ body {
     border-radius: 10px;
     font-size: 14px;
     padding: 10px;
-    border: 1px solid #051232;
+    border: 1px solid #d3d3d3;
     outline: none;
 }
 
@@ -305,7 +305,7 @@ body {
     margin: 20px;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid #051232;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 40px;
 }
 
